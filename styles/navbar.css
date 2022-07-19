@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'PT Sans Caption', sans-serif;
+    
+}
+
+nav{
+    display: flex;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;    
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+#navbar-elements{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 14px;    
+}
+
+#navbar-elements>img{
+    width: 212px;
+    height: 24px;
+}
+#navbar-elements>a{
+    margin-left: 40px;
+    color: grey;
+   
+}
+
+#navbar-elements>a:hover{
+    color: black;
+}
+
+#navbar-elements>div>button{
+    margin-left: 40px;
+    border: none;
+    color: grey;
+    background-color: white;
+    font-size: 14px;
+}
+#navbar-elements>div>button:hover{
+    color: black;
+}
+
+#drop-down-icon{
+    margin-left: 5px;
+}
+
+#more-nav{
+    width: 250px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;    
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: 20px;
+    gap: 30px;
+    background-color: white;
+    
+}
+
+#more-nav>a{
+    color: grey;
+}
+#more-nav>a:hover{
+    color: black;
+}
+.signin_register>a{
+    padding: 14px 20px;
+}
+.signin_register>a:nth-child(1){
+    color: rgb(0, 76, 255);
+    font-weight: bolder; 
+}
+
+.signin_register>a:nth-child(1):hover{
+    color: rgb(0, 17, 255); 
+}
+
+.signin_register>a:nth-child(2){
+    color: white;
+    background-color: rgb(0, 76, 255) ;
+    font-weight: bolder; 
+    
+}
+
+.signin_register>a:nth-child(2):hover{
+    background-color: rgb(0, 17, 255); 
+}
