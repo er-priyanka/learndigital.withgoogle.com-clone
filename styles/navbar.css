@@ -4,7 +4,7 @@
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'PT Sans Caption', sans-serif;
-    
+    /* position: relative; */
 }
 
 nav{
@@ -13,6 +13,12 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: white;
 }
 
 #navbar-elements{
@@ -25,6 +31,7 @@ nav{
 #navbar-elements>img{
     width: 212px;
     height: 24px;
+    cursor: pointer;
 }
 #navbar-elements>a{
     margin-left: 40px;
