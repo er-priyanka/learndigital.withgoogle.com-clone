@@ -7,3 +7,9 @@ document.querySelector("#more").addEventListener("click", ()=>{
     else
         more_nav.style.display = 'none';
 })
+
+
+let logo = document.getElementById("logo");
+logo.addEventListener("click", ()=>{
+    window.location.href = "index.html";
+})
