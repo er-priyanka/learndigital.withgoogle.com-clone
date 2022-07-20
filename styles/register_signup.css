@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#head{
+    width: 70%;
+    margin: 30px auto;
+}
+
+#head>p{
+    color: #3C4043;
+    margin-top: 10px;
+}
+
+.form-box{
+    background-color: #F8F9FA;
+    margin-top: 50px;
+    height: 100vh;
+}
+form{
+    width: 55%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    padding: 25px;
+    margin-bottom: 70px;
+    background-color: white;
+    
+
+}
+
+.form-elements{
+   width: 70%;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+#first_div{
+    width: 40%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    
+}
+
+.form-elements>div>img{
+    width: 15px;
+}
+
+.form-elements>div>p{
+    font-size: 14px;
+    color: grey;
+}
+
+input[type="email"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid grey;
+    font-size: 1rem;
+    padding: 5px 0px;
+}
+
+#second_div{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+#second_div>a{
+    color: #1A73E8;
+}
+
+#second_div>a:hover{
+    color: blue;
+}
+#second_div>button{
+    padding: 15px 30px;
+    color: grey;
+    border: none;
+    font-size: 1rem;
+}
+
+.text{
+    font-size: 0.8rem;
+    color: rgb(106, 104, 104);
+}
+
+.line{
+    display: block;
+    width: 55%;
+    margin-top: 10px;
+    margin-left: -25px;
+    position: absolute;
+    height: 4px;
+    background-color: rgb(202, 199, 199);
+    border: 1px solid #dadce0;
+}
+
+.form_footer{
+    margin-top: 25px;
+    color: rgb(106, 104, 104);
+    
+}
+
+.form_footer a{
+    color: #1A73E8;
+}
