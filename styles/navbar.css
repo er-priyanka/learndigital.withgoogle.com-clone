@@ -13,10 +13,10 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
+    /* left: 0;
+    right: 0; */
     z-index: 100;
     background-color: white;
 }
@@ -79,7 +79,7 @@ nav{
     color: black;
 }
 .signin_register>a{
-    padding: 14px 20px;
+    padding: 14px 25px;
 }
 .signin_register>a:nth-child(1){
     color: rgb(0, 76, 255);

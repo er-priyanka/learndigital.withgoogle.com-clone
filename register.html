@@ -4,9 +4,122 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>register</title>
+    <title>Register</title>
+    <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/register_signup.css">
+    <script src="https://kit.fontawesome.com/21f8e7ded6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Montserrat:ital,wght@1,200&family=PT+Sans+Caption&family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <h1>register</h1>
+    <!-- created header "Navbar" -->
+    
+    <nav>
+        <div id="navbar-elements">
+                <img id="logo" src="https://lh3.googleusercontent.com/kvtXWUZ756KishzmjWDgAf0AW77QeBSuLbUXDQidstlS2h63BSRrlgm4bU97NPjdF5skHZFKQufqTqGt1UbTO8VV0OB7SqXAz7qCng=-rw" alt="google">
+            
+                <a href="online_courses.html">Online Cources</a>
+            
+                <a href="certification.html">Certification</a>
+           
+                <a href="live_training.html">Live Training</a>
+           
+                <a href="remote_working.html">Remote Working</a>
+            
+                <div>
+                    <button id="more">More
+                        <span id="drop-down-icon"><i class="fa-solid fa-caret-down"></i></span>
+                    </button>
+                    <div id="more-nav">
+                        <a href="tools_resources.html">Tools & Resources</a>
+                        <a href="help_faqs.html">Help & FAQs</a>
+                        <a href="feedback.html">Feedback</a>
+                    </div>
+                </div>
+        </div>
+        <div class="signin_register">
+            <a href="signIn.html">Sign in</a>
+            <a href="register.html">Register</a>
+        </div>
+    </nav>
+
+    <div id="head">
+        <h1>Create your account</h1>
+        <p>Sign up to access Google Digital Garage free online courses</p>
+    </div>
+
+    <div class="form-box">
+
+        <form action="">
+            <div class="form-elements">
+                <div id="first_div">
+                    <img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt="">
+                    <p>Register with Google</p>
+                </div>
+    
+                <p>Or continue with email</p>
+    
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Choose a password">
+                <p class="text" style="margin-top: -15px;">Use 6 or more characters with a mix of letters, numbers & symbols</p>
+                
+            </div>
+           
+            
+        </form>
+        <div id="second_div" style="width:55%; margin: auto; margin-top: -50px;">
+            <p class="form_footer">Already have an account? <span><a href="register.html">Sign in.</a></span></p>
+            <button style="color: white; background-color: #DADCE0;">Continue</button>
+        </div>
+    </div>
+
+    <div>
+
+    </div>
+
+      <!-- footer  -->
+
+      <div id="footer">
+        <div>
+            <img src="https://lh3.googleusercontent.com/7NabP8N3VdnHYt17iVcUvF_Hr2lFg-ayg1YnYIrvtWCtt-RtrnwVUzLZRUT3DSg3IkZHGqEte1v-_E590aB_AC0uCA-xthGO0d1YAA=-rw" alt="image">
+
+            <div>
+                <a href="privacy.html">Privacy & Terms</a>
+                <select id="country">
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Afrique">Afrique</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Brazil">Brazil</option>
+                    <option value="Belgique">Belgique</option>
+                    <option value="Danmark">Danmark</option>
+                    <option value="European"> European </option>
+                    <option value="France">France</option>
+                    <option value="Hrvatska">Hrvatska</option>
+                    <option value="Ireland">Ireland</option>
+                    <option value="India">India</option>
+                    <option value="Italia">Italia</option>
+                    <option value="Nederland">Nederland</option>
+                    <option value="Polska">Polska</option>
+                    <option value="Portugal">Portugal</option>
+                    <option value="Sverige">Sverige</option>
+                    
+                </select>
+            </div>
+        </div>
+        <hr>
+
+        <div>
+            <p>share</p>
+            <img class="share" src="https://lh3.googleusercontent.com/sw4rOkreSopt2DcXlOCH9HPwHm7pPgeBsO8DFqWnnVPifC4473ztUcLCT49kDnDj5c-ClaRCOQKmBvbrzqICFq7yNgcqq8-byBV0aw=-rw" alt="facebook">
+            <img class="share" src="https://lh3.googleusercontent.com/O73TcAUC463DfCnA87ap5gw7uWPW2R6owA8p-jcmHYJuysd2BVT_W-1PzUdxk_kbzjQ-OHuTt4W1i3N4hi_KtCkBifUtpZFPlz4R=-rw" alt="twitter">
+            <img class="share" src="https://lh3.googleusercontent.com/2PFoqNpZ5xu9JK1u_CRR0aiYqGb0K6cOKkzmS2Ux0rucddJgNeMwsniGFMzQWopCdNK9rBzq73N0188sAtK_UFpgUHPPgz2XyDG5=-rw" alt="linkedIn">
+        </div>
+    </div>
 </body>
 </html>
+
+<script src="./jsFiles/navbar.js"></script>
