@@ -4,8 +4,12 @@
     box-sizing: border-box;
     /* font-family: 'PT Sans Caption', sans-serif; */
     font-family: 'Roboto Flex', sans-serif;
+   
 }
 
+body{
+    background-color: white;
+}
 
 .top-section{
     width: 80%;
@@ -166,7 +170,15 @@
 .mid-section>div{
     width:32%;
     padding: 25px;
+    cursor: pointer;
+    transition: margin 0.2s;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.mid-section>div:hover{
+    margin:-6px -6px ;
+   
 }
 
 .mid-section>div>h3{
@@ -186,4 +198,100 @@
     font-size: 1.2rem;
     display: block;
     text-align: right;
+}
+
+.britain_section{
+   background-color: #F8F9FA;
+   /* background-color:rgb(165, 185, 124); */
+   margin-top: 150px;
+   margin-bottom: 100px;
+   padding: 40px 0px;
+}
+.britain_growing{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.britain_growing>div:first-child{
+    width: 27%;
+}
+
+.britain_growing>div:last-child{
+    width: 60%;
+}
+.britain_growing>div>img{
+    width: 100%;
+}
+
+.britain_growing>div>p{
+    color: #4E4842;
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+    line-height: 1.3;
+}
+
+.britain_growing>div>button{
+    color: #1A73E8;
+    background-color: white;
+    border: 2px solid #1A73E8;
+    font-weight: bold;
+    padding: 10px 25px;
+    font-size: 1rem;
+}
+
+.britain_growing>div>button:hover{
+    background-color: #1A73E8;
+    color: white;
+}
+
+.faqs{
+    width: 60%;
+    margin: 70px auto 70px auto;
+   
+}
+
+.faqs>div{
+   
+    padding: 20px 0px;
+}
+.faqs>div>div{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.faqs>div>div>p{
+    width: 80%;
+    font-size: 1.2rem;
+    font-family: 'PT Sans Caption', sans-serif;
+    margin-bottom: 20px;
+}
+
+.faqs>div>div>i{
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #1A73E8;
+}
+
+.faqs>div>p{
+    color: #4E4842;
+    font-size: 1.1rem;
+    line-height: 1.3;  
+    display:none;
+    
+}
+
+.faqBtn{
+    display: block;
+    margin: 40px auto;
+    padding: 10px 30px;
+    font-size: 1rem;
+    border: none;
+   
+}
+
+.faqBtn:hover{
+    color: #1a40e8;
+    background-color: rgb(222, 222, 222);
 }
