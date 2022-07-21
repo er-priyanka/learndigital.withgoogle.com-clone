@@ -31,3 +31,30 @@ queAngles.forEach((e, i)=>{
     })
 })
 
+
+// SignIn or not
+
+let signedIn_data = JSON.parse(localStorage.getItem("SignedIn_data")) || [];
+let nav_register = document.querySelector("#nav_register");
+let nav_signIn = document.querySelector("#nav_signIn");
+
+if(signedIn_data.length>0){
+    nav_register.style.display = "none";
+    nav_signIn.innerText = "Sign out";
+}
+
+
+
+nav_signIn.addEventListener("click", ()=>{
+    if(nav_signIn.innerText == "Sign out"){
+        nav_register.style.display = "inline";
+        nav_signIn.innerText = "Sign in";
+        signedIn_data = [];
+        localStorage.setItem("SignedIn_data", JSON.stringify(signedIn_data));
+    }
+    else{
+        window.location.href = "signIn.html";
+    }
+    
+})
+
