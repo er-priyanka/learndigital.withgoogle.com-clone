@@ -18,16 +18,30 @@
 .form-box{
     background-color: #F8F9FA;
     margin-top: 50px;
-    height: 100vh;
+    padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position:relative;
+    /* bottom: 0; */
 }
 form{
     width: 55%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    padding: 30px;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;    padding: 25px;
-    margin-bottom: 70px;
-    background-color: white;
-    
+    background-color: white; 
+    /* border: 1px solid red; */ 
+}
 
+.top-part{
+    position: relative;
+    top: -20px;
+    left:0;
+    right: 0;
+    z-index: 10;
+    margin-bottom: 30px;
+    /* display: none; */
 }
 
 .form-elements{
@@ -43,7 +57,7 @@ form{
     align-items: center;
     padding: 10px 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    
+    cursor: pointer;
 }
 
 .form-elements>div>img{
@@ -55,7 +69,8 @@ form{
     color: grey;
 }
 
-input[type="email"], input[type="password"]
+input[type="email"], input[type="password"],
+input[type='text']
 {
     border: none;
     border-bottom: 1px solid grey;
@@ -67,6 +82,7 @@ input[type="email"], input[type="password"]
    display: flex;
    justify-content: space-between;
    align-items: center;
+   /* display: none; */
 }
 #second_div>a{
     color: #1A73E8;
@@ -106,4 +122,87 @@ input[type="email"], input[type="password"]
 
 .form_footer a{
     color: #1A73E8;
+}
+
+.mid-part{
+    margin-top: -20px;
+    display: none;
+}
+
+.mid-part>div{
+    display: flex;
+    flex-direction: column;
+}
+h3{
+    color: #3C4043;
+}
+.mid-part>div>p{
+    color: grey;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.mid-part>div>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.mid-part>div>div>input{
+    width: 48%;
+    border: none;
+    border-bottom: 1px solid grey;
+    margin:50px 0px 30px 0px ;
+}
+
+.last-part{
+    display: none;
+}
+.last-part>div{
+    color:#5a5e61;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.last-part>div>p{
+    margin-top: 20px;
+}
+
+.options{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.options>div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.agree{
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+    align-items: flex-start;
+    margin-top: 20px;
+}
+
+input[type="radio"], input[type="checkbox"]
+{
+   width: 20px;
+   height: 20px;
+}  
+
+.complete{
+    width: 55%;
+    margin: auto;
+    text-align: right;
+    display: none;
+}
+
+#completeBtn{
+    padding: 15px 30px;
+    color: grey;
+    border: none;
+    font-size: 1rem;
+    background-color: #DADBDC;
 }

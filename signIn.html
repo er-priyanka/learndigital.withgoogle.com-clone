@@ -41,8 +41,8 @@
                 </div>
         </div>
         <div class="signin_register">
-            <a href="signIn.html">Sign in</a>
-            <a href="register.html">Register</a>
+            <a href="signIn.html" id="nav_signIn">Sign in</a>
+            <a href="register.html" id="nav_register">Register</a>
         </div>
     </nav>
 
@@ -62,11 +62,11 @@
     
                 <p>Or continue with email</p>
     
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Password">
+                <input type="email" class="enteredValue" id="email" placeholder="Email">
+                <input type="password" class="enteredValue" id="password" placeholder="Password">
                 <div id="second_div">
                     <a href="">Forgetten password?</a>
-                    <button>Sign in</button>
+                    <button id="signInBtn" disabled = "true">Sign in</button>
                 </div>
                 <p class="text">By signing in you agree to the Google Terms of Service and Privacy Policy</p>
                 
@@ -123,3 +123,74 @@
 </html>
 
 <script src="./jsFiles/navbar.js"></script>
+
+<script>
+
+    let registeredData = JSON.parse(localStorage.getItem("user_data")) || [];
+
+    let enteredValues = document.querySelectorAll(".enteredValue");
+
+    let enteredEmail = "";
+    let enteredPassword = "";
+    enteredValues.forEach((e, i)=>{
+        e.addEventListener('input', ()=>{
+           
+            if(i==0)
+                enteredEmail=e.value;
+            else
+                enteredPassword = e.value;
+            
+            signInBtnFun(enteredEmail, enteredPassword);
+        })
+    })
+
+    function signInBtnFun(enteredEmail, enteredPassword){
+        let signInBtn = document.querySelector("#signInBtn");
+        if(enteredEmail != "" && enteredPassword.length>=6){
+            signInBtn.disabled = false;
+            signInBtn.style.backgroundColor = "blue";
+            signInBtn.style.cursor = "pointer";
+            signInBtn.style.color = "white";
+
+            signInBtn.addEventListener('click', ()=>{
+                signInFun(enteredEmail, enteredPassword);
+            })
+        }
+        else{
+            signInBtn.disabled = true;
+            signInBtn.style.backgroundColor = "#DADCE0";
+            signInBtn.style.cursor = "default";
+        }
+    }
+
+
+    // check whether data is present or not 
+    function signInFun(enteredEmail, enteredPassword){
+        event.preventDefault();
+  
+        let registeredUser = registeredData.filter((e)=>{
+            return enteredEmail == e.email && enteredPassword==e.password;
+        })
+
+        if(registeredUser.length > 0){
+            alert("Sign In Successfully!!");
+            window.location.href = "index.html";
+
+            let nav_register = document.querySelector("#nav_register");
+            nav_register.style.display = "none";
+
+            let nav_signIn = document.querySelector("#nav_signIn");
+            nav_signIn.innerText = "Sign out";
+
+            localStorage.setItem("SignedIn_data", JSON.stringify(registeredUser));
+           
+        }
+        else
+        {
+            alert("Incorrect email or password.")
+           
+        }
+        
+    }
+    
+</script>

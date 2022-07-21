@@ -53,7 +53,7 @@
 
     <div class="form-box">
 
-        <form action="">
+        <form action="" class="top-part section-1">
             <div class="form-elements">
                 <div id="first_div">
                     <img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt="">
@@ -62,23 +62,89 @@
     
                 <p>Or continue with email</p>
     
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Choose a password">
+                <input id="email" class="inputValue" type="email" placeholder="Email">
+                <input id="password" class="inputValue" type="password" placeholder="Choose a password">
                 <p class="text" style="margin-top: -15px;">Use 6 or more characters with a mix of letters, numbers & symbols</p>
                 
             </div>
            
             
         </form>
-        <div id="second_div" style="width:55%; margin: auto; margin-top: -50px;">
+        <div id="second_div" class="section-1" style="width:55%; margin: auto; margin-top: -50px;">
             <p class="form_footer">Already have an account? <span><a href="register.html">Sign in.</a></span></p>
-            <button style="color: white; background-color: #DADCE0;">Continue</button>
+            <button id="continue" disabled="true" style="color: white; background-color: #DADCE0;">Continue</button>
         </div>
+
+        <!-- Hidden section of form  -->
+
+        <form action=""  class="mid-part section-2">
+            <div>
+                <h3>Personal details</h3>
+                <p>This name will appear on your Google Digital Garage certificates.</p>
+                <div>
+                    <input type="text" id="first_name" placeholder="First name">
+                    <input type="text" id="last_name" placeholder="last name">
+                </div>
+            </div>
+            
+        </form>
+
+        <form action=""  class="last-part section-2">
+            <div>
+                <h3>Email preferences</h3>
+
+                <p>Would you like to receive emails with tips on improving your digital skills?</p>
+                <div class="options">
+                    <div>
+                        <input type="radio" name="improveSkills" value="yes" >
+                        <label for="">Yes, please</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="improveSkills" value="no">
+                        <label for="">No, thanks</label>
+                    </div>
+                </div>
+
+                <p>Can our research partners occasionally contact you to get your feedback?</p>
+                <div class="options">
+                    <div>
+                        <input type="radio" name="feedback" value="yes" >
+                        <label for="">Yes, please</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="feedback" value="no">
+                        <label for="">No, thanks</label>
+                    </div>
+                </div>
+               
+
+                <p>Do you want to receive emails about new courses or related products?</p>
+                <div class="options">
+                    <div>
+                        <input type="radio" name="new" value="yes" >
+                        <label for="">Yes, please</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="new" value="no">
+                        <label for="">No, thanks</label>
+                    </div>
+                </div>
+               
+                <div class="agree">
+                    <input type="checkbox" id="checkbox">
+                    <p>By signing in I agree to the <span><a href="">Google Terms of service</a></span>
+                    and acknowledge that my information will be used in accordance with <span><a href="">Google Privacy policy</a></span>.</p>
+                </div>
+            </div>
+           
+        </form>
+        <div class="complete section-2">
+            <button id="completeBtn" disabled="true">Complete</button>        
+        </div>
+
     </div>
 
-    <div>
-
-    </div>
+   
 
       <!-- footer  -->
 
@@ -123,3 +189,196 @@
 </html>
 
 <script src="./jsFiles/navbar.js"></script>
+
+<script>
+
+    let inputData = JSON.parse(localStorage.getItem("user_data")) || [];
+
+    let inputValues = document.querySelectorAll(".inputValue");
+    let obj = {};
+    let email = "";
+    let password = "";
+    inputValues.forEach((e, i)=>{
+        e.addEventListener('input', ()=>{
+            if(i==0)
+                email=e.value;
+            else
+                password = e.value;
+            
+            continueBtnFun(email, password);
+        })
+ 
+    })
+    
+    // continueBtn enabled or disabled 
+    function continueBtnFun(email, password){
+        let continueBtn = document.querySelector("#continue");
+        if(email != "" && password.length>=6){
+            continueBtn.disabled = false;
+            continueBtn.style.backgroundColor = "blue";
+            continueBtn.style.cursor = "pointer";
+            // continueBtn.style.color = "white";
+
+
+            obj["email"] = email;
+            obj["password"] = password;
+
+            let present = inputData.filter((e)=>{
+                return e.email == obj.email;
+            })
+
+            if(present == false){
+                continueBtn.addEventListener("click", continueFn);
+            }
+            else{
+                alert("Email is already registered!!");
+                continueBtn.disabled = true;
+                continueBtn.style.backgroundColor = "#DADCE0";
+                continueBtn.style.cursor = "default";
+            }
+        }
+        else{
+            continueBtn.disabled = true;
+            continueBtn.style.backgroundColor = "#DADCE0";
+            continueBtn.style.cursor = "default";
+        }
+
+       
+    }
+    
+    
+
+    // go to the next part of form    
+    function continueFn(){
+        let first_part = document.querySelectorAll(".section-1");
+        first_part.forEach((e)=>{
+            e.style.display = 'none';
+        })
+
+        let second_part = document.querySelectorAll(".section-2");
+        second_part.forEach((e)=>{
+            e.style.display = "block";
+        })
+    }
+
+
+    let first_name = document.querySelector("#first_name");
+    let first_name_value = "";
+
+    first_name.addEventListener("change", ()=>{
+        first_name_value = first_name.value;
+        obj['first_name'] = first_name_value;
+        
+        
+    })
+
+    let last_name = document.querySelector("#last_name");
+    let last_name_value = "";
+    last_name.addEventListener("change", ()=>{
+        last_name_value = last_name.value;
+        obj['last_name'] = last_name_value;
+        
+    })
+
+    //questions and answers
+
+    let improveSkills = document.getElementsByName("improveSkills");
+    
+
+    improveSkills.forEach((e)=>{
+        
+        e.addEventListener("click" ,()=>{
+            if(e.checked)
+                obj["improveSkills"] = e.value;
+            
+        })
+        
+    })
+   
+
+    let feedback = document.getElementsByName("feedback");
+
+    feedback.forEach((e)=>{
+        
+        e.addEventListener("click" ,()=>{
+            if(e.checked)
+                obj["feedback"] = e.value;
+           
+        })
+        
+    })
+
+
+    let new_products = document.getElementsByName("new");
+
+    new_products.forEach((e)=>{
+        
+        e.addEventListener("click" ,()=>{
+            if(e.checked)
+                obj["new_products"] = e.value;
+           
+        })
+        
+    })
+
+
+    let checkbox = document.getElementById("checkbox");
+
+    checkbox.addEventListener("click" ,()=>{
+            if(checkbox.checked)
+                obj["agree"] = "yes";
+            else
+                obj["agree"] = "no";
+            
+            completeFun(obj);
+    })
+   
+    
+    function completeFun(obj){
+        let completeBtn = document.querySelector("#completeBtn");
+        if(obj.first_name != "" && obj.last_name !="" && obj.improveSkills != "" && obj.feedback != "" && obj.new_products != "" && obj.agree != "no"){
+            completeBtn.disabled = false;
+            completeBtn.style.backgroundColor = "blue";
+            completeBtn.style.color = "white";
+            completeBtn.style.cursor = "pointer";
+
+            completeBtn.addEventListener('click', ()=>{
+                completeBtnFun(obj);
+            });
+        }
+        else{
+            completeBtn.disabled = true;
+            completeBtn.style.backgroundColor = "#DADCE0";
+            completeBtn.style.cursor = "default";
+        }
+
+        
+    }
+    
+
+    function completeBtnFun(obj){
+        // let present = inputData.filter((e)=>{
+        //     return e.email == obj.email;
+        // })
+
+        // if(present==false){
+            inputData.push(obj);
+            localStorage.setItem("user_data", JSON.stringify(inputData));
+            alert("Registration Successfully!!");
+            window.location.href = "signIn.html";
+        // }
+        // else{
+        //     alert("Email is already registered!!");
+        // }
+    
+    }
+    
+    
+        
+
+
+          
+    
+    
+
+</script>
