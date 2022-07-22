@@ -1,8 +1,16 @@
 font-family: 'Anek Malayalam', sans-serif;
-    font-family: 'Montserrat', sans-serif;
-    font-family: 'PT Sans Caption', sans-serif;
-     font-family: 'Roboto Flex', sans-serif; 
+font-family: 'Montserrat', sans-serif;
+font-family: 'PT Sans Caption', sans-serif;
+font-family: 'Roboto Flex', sans-serif; 
 
 
 
 <i class="fa-solid fa-angle-up"></i>
+
+blue: #1A73E8;
+light gray : #a2a7aa;
+
+<i class="fa-solid fa-arrow-right"></i>
+
+<i class="fa-solid fa-bars"></i>
+<i class="fa-regular fa-clock"></i>
