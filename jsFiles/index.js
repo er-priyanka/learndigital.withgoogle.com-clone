@@ -1,3 +1,10 @@
+let find_course = document.querySelector("#find_course");
+find_course.addEventListener("click", ()=>{
+    window.location.href = "online_courses.html";
+})
+
+
+
 let queAngles = document.querySelectorAll(".queAngle");
 let answers = document.querySelectorAll(".ans");
 
