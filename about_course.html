@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./styles/navbar.css">
+    <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/footer.css">
-    <link rel="stylesheet" href="./styles/register_signup.css">
+    <link rel="stylesheet" href="./styles/about_course.css">
     <script src="https://kit.fontawesome.com/21f8e7ded6.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@300&family=Montserrat:ital,wght@1,200&family=PT+Sans+Caption&family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <!-- created header "Navbar" -->
-    
-    <nav>
+     <!-- created header "Navbar" -->
+
+     <nav>
         <div id="navbar-elements">
                 <img id="logo" src="https://lh3.googleusercontent.com/kvtXWUZ756KishzmjWDgAf0AW77QeBSuLbUXDQidstlS2h63BSRrlgm4bU97NPjdF5skHZFKQufqTqGt1UbTO8VV0OB7SqXAz7qCng=-rw" alt="google">
             
@@ -52,38 +52,57 @@
         </div>
     </nav>
 
-    <div id="head">
-        <h1>Sign in</h1>
-        <p>Access your online courses and track your progress</p>
+    <!-- top section  -->
+    <div class="top-section">
+            
     </div>
 
-    <div class="form-box">
-
-        <form action="">
-            <div class="form-elements">
-                <div id="first_div">
-                    <img src="https://learndigital.withgoogle.com/static/digital-workshop/assets/icons/google-button-g.png" alt="">
-                    <p>Sign in with Google</p>
-                </div>
+    <!-- about_course  -->
+    <div class="outerbox">
+        <div class="more-details">
+            <div>
+                <p>Course details</p>
+                <div>
+                    <i class="fa-solid fa-bars">
+                        <span id="modules">Modules: 0 </span>
+                    </i>
+                    <i class="fa-regular fa-clock">
+                        <span id="hours">Hours: 0</span>
+                    </i>
     
-                <p>Or continue with email</p>
+                    <i class="fa-solid fa-layer-group">
+                        <span id="level">Beginner</span>
+                    </i> 
+               
     
-                <input type="email" class="enteredValue" id="email" placeholder="Email">
-                <input type="password" class="enteredValue" id="password" placeholder="Password">
-                <div id="second_div">
-                    <a href="">Forgetten password?</a>
-                    <button id="signInBtn" disabled = "true">Sign in</button>
+                    <i class="fa-solid fa-coins">
+                        <span id="amount">Free</span>
+                    </i>
+    
                 </div>
-                <p class="text">By signing in you agree to the Google Terms of Service and Privacy Policy</p>
-                
             </div>
-            <hr class="line">
-            <p class="form_footer">Need an account? <span><a href="register.html">Sign up here.</a></span></p>
-        </form>
-    </div>
-
-    <div>
-
+    
+            <div>
+                <p>course features</p>
+                <div>
+                    
+                    <i class="fa-solid fa-circle-check"><span>Video tutorials</span></i>
+                    <i class="fa-solid fa-circle-check"><span>Easy-to-implement tips</span></i>
+                    <i class="fa-solid fa-circle-check"><span>End-of-topic assessments</span></i>
+                    <i class="fa-solid fa-circle-check"><span>Unlimited access</span></i>
+                    
+                </div>
+            </div>
+    
+            <div>
+                <h2>About this course</h2>
+                <p id="about">
+                    Start our free course to discover what it takes to start and run a successful business online.
+                    You'll also learn how to build a digital presence, use e-commerce, keep a business safe from hackers, and get noticed locally.
+                </p>
+            </div>
+        </div>
+    
     </div>
 
       <!-- footer  -->
@@ -125,78 +144,11 @@
             <img class="share" src="https://lh3.googleusercontent.com/2PFoqNpZ5xu9JK1u_CRR0aiYqGb0K6cOKkzmS2Ux0rucddJgNeMwsniGFMzQWopCdNK9rBzq73N0188sAtK_UFpgUHPPgz2XyDG5=-rw" alt="linkedIn">
         </div>
     </div>
+   
 </body>
 </html>
 
+
+
 <script src="./jsFiles/navbar.js"></script>
-
-<script>
-
-    let registeredData = JSON.parse(localStorage.getItem("user_data")) || [];
-
-    let enteredValues = document.querySelectorAll(".enteredValue");
-
-    let enteredEmail = "";
-    let enteredPassword = "";
-    enteredValues.forEach((e, i)=>{
-        e.addEventListener('input', ()=>{
-           
-            if(i==0)
-                enteredEmail=e.value;
-            else
-                enteredPassword = e.value;
-            
-            signInBtnFun(enteredEmail, enteredPassword);
-        })
-    })
-
-    function signInBtnFun(enteredEmail, enteredPassword){
-        let signInBtn = document.querySelector("#signInBtn");
-        if(enteredEmail != "" && enteredPassword.length>=6){
-            signInBtn.disabled = false;
-            signInBtn.style.backgroundColor = "blue";
-            signInBtn.style.cursor = "pointer";
-            signInBtn.style.color = "white";
-
-            signInBtn.addEventListener('click', ()=>{
-                signInFun(enteredEmail, enteredPassword);
-            })
-        }
-        else{
-            signInBtn.disabled = true;
-            signInBtn.style.backgroundColor = "#DADCE0";
-            signInBtn.style.cursor = "default";
-        }
-    }
-
-
-    // check whether data is present or not 
-    function signInFun(enteredEmail, enteredPassword){
-        event.preventDefault();
-  
-        let registeredUser = registeredData.filter((e)=>{
-            return enteredEmail == e.email && enteredPassword==e.password;
-        })
-
-        if(registeredUser.length > 0){
-            alert("Sign In Successfully!!");
-            window.location.href = "index.html";
-
-            let nav_register = document.querySelector("#nav_register");
-            nav_register.style.display = "none";
-
-            let nav_signIn = document.querySelector("#nav_signIn");
-            nav_signIn.innerText = "Sign out";
-
-            localStorage.setItem("SignedIn_data", JSON.stringify(registeredUser));
-           
-        }
-        else
-        {
-            alert("Incorrect email or password.")
-           
-        }
-        
-    }
-    
-</script>
+<script src="./jsFiles/about_course.js"></script>
