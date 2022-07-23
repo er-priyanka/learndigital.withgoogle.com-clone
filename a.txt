@@ -14,3 +14,15 @@ light gray : #a2a7aa;
 
 <i class="fa-solid fa-bars"></i>
 <i class="fa-regular fa-clock"></i>
+
+
+.detail-about__features li:before {
+    color: #34a853;
+    content: "\E86C";
+    font-family: Material Icons;
+    font-size: 2.2rem;
+    -webkit-margin-end: 8px;
+    margin-inline-end: 8px;
+    position: relative;
+    vertical-align: middle;
+}

@@ -28,6 +28,9 @@ nav{
     font-size: 14px;    
 }
 
+#navbar-elements>#logo+a{
+    display: none;
+}
 #navbar-elements>img{
     width: 212px;
     height: 24px;
@@ -100,3 +103,9 @@ nav{
 .signin_register>a:nth-child(2):hover{
     background-color: rgb(0, 17, 255); 
 }
+
+#certification-more, #profile, #signout{
+    display: none;
+    
+}
+
