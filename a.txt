@@ -26,3 +26,7 @@ light gray : #a2a7aa;
     position: relative;
     vertical-align: middle;
 }
+
+
+<i class="fa-solid fa-trash-can-xmark"></i>
+<i class="fa-solid fa-trash-can-xmark"></i>
