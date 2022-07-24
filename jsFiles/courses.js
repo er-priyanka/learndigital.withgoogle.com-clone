@@ -1,69 +1,4 @@
-
-// filter section 
-
-let filterData = {
-    categories:["Digital Marketing", "Career development", "Data"],
-
-    "course length":["Under 2 hours", "2-10 hours", "11-20 hours", "20+ hours"],
-
-    certification:["Free certificate", "Paid certificate"],
-
-    "course difficulty":["Beginner", "Intermediate", "Advanced"],
-
-    "course provider" : ["Google", "Applied Digital Skills", "Coursera", "Darden School of Business, University of Virginia",
-                        "FutureLearn", "Goodwill Community Foundation", "Google Cloud", "Grasshopper", "Great Learning", "Monash University", "National Chiao Tung University", 
-                        "OpenClassrooms", "Simplilearn", "Skillshop", "The Open University", "Udacity", "University of Auckland", "University of Groningen", "University of Helsinki"]
-
-}
-
-
-for(let key in filterData){
-    let keyArr = filterData[key];
-    
-    let box = document.createElement("div");
-    box.setAttribute("class", "filters");
-    document.querySelector(".course-filters").append(box);
-
-    let title = document.createElement("h4");
-    title.innerText = key;
-
-    keyArr.forEach((e)=>{
-        let div1 = document.createElement("div");
-        div1.setAttribute("class", "div1");
-
-        let checkbox = document.createElement("input");
-        checkbox.setAttribute("type", "checkbox");
-        
-        
-        let label = document.createElement("p");
-        label.innerText = e;
-
-        div1.append(checkbox, label);
-
-        title.append(div1);
-        box.append(title);
-    })
-
-}
-
-
-let reset_div = document.createElement("div");
-reset_div.setAttribute("class", "reset_div");
-
-let icon = document.createElement("i");
-icon.setAttribute("class", "fa-solid fa-arrow-rotate-right");
-reset_div.append(icon);
-
-let span = document.createElement("span");
-span.innerText = "Reset Filters";
-icon.append(span);
-document.querySelector(".course-filters").append(reset_div);
-
-
-
-
-
-// course section 
+//course data
 
 let courseData = [
     {
@@ -355,6 +290,82 @@ let courseData = [
     },
     
 ]
+// filter section 
+
+let filterData = {
+    categories:["Digital Marketing", "Career development", "Data"],
+
+    "course length":["Under 2 hours", "2-10 hours", "11-20 hours", "20+ hours"],
+
+    certification:["Free certificate", "Paid certificate"],
+
+    "course difficulty":["Beginner", "Intermediate", "Advanced"],
+
+    "course provider" : ["Google", "Applied Digital Skills", "Coursera", "Darden School of Business, University of Virginia",
+                        "FutureLearn", "Goodwill Community Foundation", "Google Cloud", "Grasshopper", "Great Learning", "Monash University", "National Chiao Tung University", 
+                        "OpenClassrooms", "Simplilearn", "Skillshop", "The Open University", "Udacity", "University of Auckland", "University of Groningen", "University of Helsinki"]
+
+}
+
+
+for(let key in filterData){
+    let keyArr = filterData[key];
+    
+    let box = document.createElement("div");
+    box.setAttribute("class", "filters");
+    document.querySelector(".course-filters").append(box);
+
+    let title = document.createElement("h4");
+    title.innerText = key;
+
+    keyArr.forEach((e)=>{
+        let div1 = document.createElement("div");
+        div1.setAttribute("class", "div1");
+
+        let checkbox = document.createElement("input");
+        checkbox.setAttribute("type", "checkbox");
+        
+        // checkbox.addEventListener("click", checkboxFn);
+        
+        let label = document.createElement("p");
+        label.innerText = e;
+
+        div1.append(checkbox, label);
+
+        title.append(div1);
+        box.append(title);
+    })
+
+}
+
+
+let reset_div = document.createElement("div");
+reset_div.setAttribute("class", "reset_div");
+
+let icon = document.createElement("i");
+icon.setAttribute("class", "fa-solid fa-arrow-rotate-right");
+reset_div.append(icon);
+
+let span = document.createElement("span");
+span.innerText = "Reset Filters";
+span.style.cursor = "pointer";
+span.addEventListener("click", resetFn);
+
+icon.append(span);
+document.querySelector(".course-filters").append(reset_div);
+
+function resetFn(){
+    let allCheckBox = document.querySelectorAll("input[type='checkbox']");
+    allCheckBox.forEach((e)=>{
+        e.checked = false;
+    })
+}
+
+
+
+// course section 
+
+
 
 
 let items = document.querySelector("#total-courses");
@@ -363,7 +374,9 @@ items.innerText = courseData.length;
 courseDataFn(courseData);
 
 // Data by filters 
+// function checkboxFn(){
 
+// }
 
 
 function courseDataFn(courseData){
