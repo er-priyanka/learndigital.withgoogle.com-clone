@@ -40,8 +40,15 @@ a[href="privacy.html"]+select{
     justify-content: right;
     align-items: center;
     gap: 30px;
+   
+}
+
+#footer>div:last-child>p{
+    width: fit-content;
+    color: black;
 }
 
 .share{
     width: 22px;
+    
 }

@@ -221,11 +221,20 @@ function deleteFn(e, i){
 
 
 function completedfun(e, i){
-    alert(`Congratulations, you have successfully completed ${e.name} course`);
-    if(!completed_data.includes(e.id)){
+    
+    let present = completed_data.filter((ele)=>{
+        return e.id == ele.id;
+    });
+
+    if(present.length == 0){
+        alert(`Congratulations, you have successfully completed ${e.name} course`);
         completed_data.push(e);
         localStorage.setItem("completed_data", JSON.stringify(completed_data));
     }
+    else{
+        alert(`You have aleready completed ${e.name} course. Check inside of completed section!`);
+    }
+    
         
     learn_in_progress.splice(i, 1);
     localStorage.setItem("courses_started", JSON.stringify(learn_in_progress));

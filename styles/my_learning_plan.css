@@ -32,9 +32,11 @@
 }
 
 .section>div:first-child>p{
-   width: 150px;
+   width: 130px;
    cursor: pointer;
    color: black;
+   text-align: center;
+   margin-right: 10px;
    /* border-bottom: 2px solid blue; */
 }
 
