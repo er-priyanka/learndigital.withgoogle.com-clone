@@ -40,4 +40,11 @@ queAngles.forEach((e, i)=>{
 
 
 
+let mid_section = document.querySelectorAll(".mid-section>div");
+
+mid_section.forEach((e)=>{
+    e.addEventListener("click", ()=>{
+        window.location.href = "online_courses.html";
+    })
+});
 
